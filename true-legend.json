@@ -4,8 +4,8 @@
     "description": "Sistema di gdr totalmente aperto.",
     "author": "Joshua",
     "version": 0.01,
-    "minimumCoreVersion": "0.6.4",
-    "compatibleCoreVersion": "0.6.4",
+    "minimumCoreVersion": "13.332",
+    "compatibleCoreVersion": "13.332",
     "esmodules": [
         "true-legend.js"
     ],
