@@ -4,22 +4,20 @@
     "description": "Sistema di gdr totalmente aperto.",
     "author": "Joshua",
     "version": 0.01,
-    "minimumCoreVersion": "13.332",
-    "compatibleCoreVersion": "13.332",
     "esmodules": [
         "true-legend.js"
     ],
-    "styles":[
+    "styles": [
         "true-legend.css"
     ],
     "packs": [
 
     ],
-    "languages":[
+    "languages": [
 
     ],
-    "gridDistance": 5,
-    "gridUnits": "m",
+    "grid.distance": 5,
+    "grid.units": "m",
     "primaryTokenAttribute": "life-points",
     "initiative": "@perception + @agility"
 }
