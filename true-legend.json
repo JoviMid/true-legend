@@ -1,0 +1,25 @@
+{
+    "name":"true-legend",
+    "title": "True legend",
+    "description": "Sistema di gdr totalmente aperto.",
+    "author": "Joshua",
+    "version": 0.01,
+    "minimumCoreVersion": "0.6.4",
+    "compatibleCoreVersion": "0.6.4",
+    "esmodules": [
+        "true-legend.js"
+    ],
+    "styles":[
+        "true-legend.css"
+    ],
+    "packs": [
+
+    ],
+    "languages":[
+
+    ],
+    "gridDistance": 5,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "life-points",
+    "initiative": "@perception + @agility"
+}
