@@ -1,4 +1,126 @@
 {
-    "Actor":{},
-    "Item":{}
+  "Actor": {
+      "types":[
+          "character",
+          "npc",
+          "villain"
+      ],
+      "templates": {
+          "common": {
+              "categories":{
+                  "body": {
+                      "vig": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "agi": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "for": {
+                          "value": 0,
+                          "points": 0
+                      }
+                  },
+                  "mind": {
+                      "mem": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "per": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "wil": {
+                          "value": 0,
+                          "points": 0
+                      }
+                  },
+                  "empa": {
+                      "ins": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "dec": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "prs": {
+                          "value": 0,
+                          "points": 0
+                      }
+                  },
+                  "spir": {
+                      "inf": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "prc": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "alt": {
+                          "value": 0,
+                          "points": 0
+                      }
+                  },
+                  "magi": {
+                      "ene": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "ent": {
+                          "value": 0,
+                          "points": 0
+                      },
+                      "cre": {
+                          "value": 0,
+                          "points": 0
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "Item": {
+      "types": [
+        "item", 
+        "weapon", 
+        "armor", 
+        "accessory", 
+        "feat", 
+        "ability", 
+        "flaw", 
+        "perk"
+      ],
+      "templates":{
+          "itemDescription":{
+              "description":""
+          }
+      },
+      "weapon": {
+          "templates": [
+              "itemDescription"
+          ],
+          "type":"Fists",
+          "cw":"Melee",
+          "category":"Disarmed",
+          "rarity":"Common",
+          "gp":0,
+          "prorpieties":""
+      },
+      "armor": {
+          "templates": [
+              "itemDescription"
+          ],
+          "category":"Unarmored",
+          "rarity":"Common",
+          "defences":{
+              "guard":0,
+              "fortitude":0,
+              "sanity":0
+          },
+          "prorpieties":""
+      }
+  }
 }
