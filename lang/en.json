@@ -1,0 +1,50 @@
+{
+  "TRUE_LEGEND": {
+    "Ability": {
+      "Vig": { "long": "Vigor", "abbr": "vig" },
+      "Agi": { "long": "Agility", "abbr": "agi" },
+      "For": { "long": "Fortitude", "abbr": "for" },
+      "Mem": { "long": "Memory", "abbr": "mem" },
+      "Per": { "long": "Perception", "abbr": "per" },
+      "Wil": { "long": "Will", "abbr": "wil" },
+      "Ins": { "long": "Insight", "abbr": "ins" },
+      "Dec": { "long": "Deception", "abbr": "dec" },
+      "Pre": { "long": "Presence", "abbr": "pre" },
+      "Inf": { "long": "Influence", "abbr": "inf" },
+      "Prs": { "long": "Prescience", "abbr": "prs" },
+      "Alt": { "long": "Alteration", "abbr": "alt" },
+      "Ene": { "long": "Energy", "abbr": "ene" },
+      "Ent": { "long": "Entropy", "abbr": "ent" },
+      "Cre": { "long": "Creation", "abbr": "cre" }
+    },
+    "SheetLabels": {
+      "Actor": "TrueLegend Actor Sheet",
+      "Item": "TrueLegend Item Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "feature": "Feature",
+      "spell": "Spell"
+    }
+  }
+}
