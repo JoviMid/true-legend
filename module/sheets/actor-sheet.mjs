@@ -145,6 +145,8 @@ export class TrueLegendActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
+
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
@@ -195,6 +197,8 @@ export class TrueLegendActorSheet extends ActorSheet {
     }
   }
 
+
+
   /**
    * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
    * @param {Event} event   The originating click event
@@ -231,6 +235,23 @@ export class TrueLegendActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
+    let grade = (parseFloat(document.getElementById('attributeSelector1').value) || 0) + 
+                (parseFloat(document.getElementById('attributeSelector2').value) || 0);
+
+    let bonus = Math.ceil(grade / 2);
+    let d12Dice = Math.floor(grade / 10);
+    const dices = ["", "", "D4", "D4", "D6", "D6", "D8", "D8", "D10", "D10"];
+    let dice = dices[grade % 10];
+
+
+    if (grade === 0 || grade === 1) {
+      dataset.roll = `D2+${bonus}`;
+    } else if (grade < 10) {
+      dataset.roll = `${dice}+${bonus}`;
+    } else if (grade >= 10) {
+      dataset.roll = `${d12Dice}D12+${dice}+${bonus}`;
+    }
+
 
     // Handle item rolls.
     if (dataset.rollType) {
@@ -254,3 +275,4 @@ export class TrueLegendActorSheet extends ActorSheet {
     }
   }
 }
+

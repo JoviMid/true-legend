@@ -22,6 +22,20 @@ TRUE_LEGEND.abilities = {
   cre: 'TRUE_LEGEND.Ability.Cre.long',
 };
 
+TRUE_LEGEND.defences = {
+  gua: 'TRUE_LEGEND.Defences.Gua.long',
+  res: 'TRUE_LEGEND.Defences.Res.long',
+  san: 'TRUE_LEGEND.Defences.San.long',
+}
+
+TRUE_LEGEND.movements = {
+  lan: 'TRUE_LEGEND.Defences.Lan.long',
+  cli: 'TRUE_LEGEND.Defences.Cli.long',
+  swi: 'TRUE_LEGEND.Defences.Swi.long',
+  fly: 'TRUE_LEGEND.Defences.Fly.long',
+  bur: 'TRUE_LEGEND.Defences.Bur.long',
+}
+
 TRUE_LEGEND.abilityAbbreviations = {
   vig: 'TRUE_LEGEND.Ability.Vig.abbr',
   agi: 'TRUE_LEGEND.Ability.Agi.abbr',
@@ -39,3 +53,17 @@ TRUE_LEGEND.abilityAbbreviations = {
   ent: 'TRUE_LEGEND.Ability.Ent.abbr',
   cre: 'TRUE_LEGEND.Ability.Cre.abbr',
 };
+
+TRUE_LEGEND.defencesAbbreviations = {
+  gua: 'TRUE_LEGEND.Defences.Gua.abbr',
+  res: 'TRUE_LEGEND.Defences.Res.abbr',
+  san: 'TRUE_LEGEND.Defences.San.abbr',
+}
+
+TRUE_LEGEND.movementsAbbreviations = {
+  lan: 'TRUE_LEGEND.Defences.Lan.abbr',
+  cli: 'TRUE_LEGEND.Defences.Cli.abbr',
+  swi: 'TRUE_LEGEND.Defences.Swi.abbr',
+  fly: 'TRUE_LEGEND.Defences.Fly.abbr',
+  bur: 'TRUE_LEGEND.Defences.Bur.abbr',
+}

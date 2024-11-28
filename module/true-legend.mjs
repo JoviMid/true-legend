@@ -109,8 +109,12 @@ Handlebars.registerHelper('div', function(a, b) {
   return Math.floor(a / b);
 });
 Handlebars.registerHelper('createOption', function(attribute, key) {
+  // Key: vig
+  // Value: Vigor
   // Ritorna una stringa HTML per l'elemento <option>
-  return new Handlebars.SafeString(`<option name="system.abilities.${key}.value">${attribute}</option>`);
+  //console.log("CCCCCCCCCCCCCCCKey: " + key );
+  //console.log("CCCCCCCCCCCCCCCValue: " + attribute);
+  return new Handlebars.SafeString(`<option value="${key}">${attribute}</option>`);
 });
 Handlebars.registerHelper('logConsole', function(context) {
   console.log(context);

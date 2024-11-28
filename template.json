@@ -78,6 +78,37 @@
                           "points": 0
                       }
                   }
+              },
+              "defences": {
+                "guard": {
+                    "armor": 0,
+                    "bonus": 0
+                },
+                "resilience": {
+                    "armor": 0,
+                    "bonus": 0
+                },
+                "sanity": {
+                    "armor": 0,
+                    "bonus": 0
+                }
+              },
+              "movements": {
+                "land": {
+                    "value": 5
+                },
+                "climb": {
+                    "value": 5
+                },
+                "swim": {
+                    "value": 5
+                },
+                "fly": {
+                    "value": 0
+                },
+                "burrow": {
+                    "value": 0
+                }
               }
           }
       }
@@ -117,7 +148,7 @@
           "rarity":"Common",
           "defences":{
               "guard":0,
-              "fortitude":0,
+              "resilience":0,
               "sanity":0
           },
           "prorpieties":""
