@@ -65,12 +65,12 @@
                   </div>
                 </div>
 
-                <!-- Ability {0: Attr; 1: {Value:n, Cost:n, label:text}} -->
+                <!-- Ability {0: Attr; 1: {Value:lvl, Cost:n, label:text}} -->
                 {{#each (objectToArray system.abilities) as |ability index|}}
                   {{#if (div3 index)}}
-                    {{logConsole ability}}
                     <section id="category" style="margin-bottom: 10px;">
                       <h3>{{names (div (index) 3)}}</h3>
+                      {{logConsole ability}}
                   {{/if}}
                   
                   <div class="ability flexrow flex-group-center square">
@@ -89,29 +89,123 @@
 
           {{!-- For the main features list, span the right two columns --}}
           <section class="main grid-span-2">
-
             <div>
             {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
             {{> "systems/true-legend/templates/actor/parts/actor-features.hbs"}}
             </div>
-              <div class="flex-group-center">
-                <h2>Lancio dadi</h2>
-                <label>Attr</label>
-                <select id="attributeSelector1">
-                  <!-- name="system.abilities.{{ability.[0]}}.value" value="{{ability.[1].value}}-->
-                  {{#each (objectToArray system.abilities) as |ability index|}}
-                    {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[0]}}
-                  {{/each}}
-                </select>
-                <span> + </span>
-                <label>Attr</label>
-                <select id="attributeSelector2">
-                  {{#each (objectToArray system.abilities) as |ability index|}}
-                    {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[0]}}
-                  {{/each}}
-                </select>
-                <button id="rollDiceBtn">Lancia</button>
+            <div class="flex-group-center">
+              <h2>Lancio dadi</h2>
+              <label>Attr</label>
+              <select id="attributeSelector1">
+                {{#each (objectToArray system.abilities) as |ability index|}}
+                  {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[1].value}}
+                {{/each}}
+              </select>
+              <span> + </span>
+              <label>Attr</label>
+              <select id="attributeSelector2">
+                {{#each (objectToArray system.abilities) as |ability index|}}
+                  {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[1].value}}
+                {{/each}}
+              </select>
+              <button type="button" id="rollDiceBtn" class="ability-mod rollable" data-roll="1d20+@abilities.{{ability.[1].value}}" data-label="{{ability.label}}">Lancia</button>
               </div>
+            <div>
+              <h2>Defences</h2>
+              <!-- Guard -->
+              <div class="category flex-group-left grid grid-2col">
+                <!-- Header Guard -->
+                <div class="flex-group-left">
+                  <h3 class="align-left">Guard</h3>
+                </div>
+                <div class="flex-group-right">
+                  <span style="display: block; font-size: 1.5rem; font-weight: bold; text-align: center; color: #000; margin: 0 auto;">{{numberFormat system.defences.guard.max}}</span>
+                </div>
+
+                <!-- Armor -->
+                <div class="flex-group-left">
+                  <label for="gArmor">Armor:</label>
+                </div>
+                <div>
+                  <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.guard.armor" placeholder="Armor" value="{{system.defences.guard.armor}}" data-dtype="number">
+                </div>
+
+                <!-- Bonus -->
+                <div class="flex-group-left">
+                  <label for="gBonus">Bonus:</label>
+                </div>
+                <div>
+                  <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.guard.bonus" placeholder="Bonus" value="{{system.defences.guard.bonus}}" data-dtype="number">
+                </div>
+              </div>
+              <!-- Resilience -->
+              <div class="category flex-group-left grid grid-2col">
+                <!-- Header Resilience -->
+                <div class="flex-group-left">
+                  <h3 class="align-left">Resilience</h3>
+                </div>
+                <div class="flex-group-right">
+                  <span style="display: block; font-size: 1.5rem; font-weight: bold; text-align: center; color: #000; margin: 0 auto;">{{numberFormat system.defences.resilience.max}}</span>
+                </div>
+
+                <!-- Armor -->
+                <div class="flex-group-left">
+                  <label for="rArmor">Armor:</label>
+                </div>
+                <div>
+                  <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.resilience.armor" placeholder="Armor" value="{{system.defences.resilience.armor}}" data-dtype="number">
+                </div>
+
+                <!-- Bonus -->
+                <div class="flex-group-left">
+                  <label for="rBonus">Bonus:</label>
+                </div>
+                <div>
+                  <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.resilience.bonus" placeholder="Bonus" value="{{system.defences.resilience.bonus}}" data-dtype="number">
+                </div>
+              </div>
+              <!-- Guard -->
+              <div class="category flex-group-left grid grid-2col">
+                <!-- Header Sanity -->
+                <div class="flex-group-left">
+                  <h3 class="align-left">Sanity</h3>
+                </div>
+                <div class="flex-group-right">
+                  <span style="display: block; font-size: 1.5rem; font-weight: bold; text-align: center; color: #000; margin: 0 auto;">{{numberFormat system.defences.sanity.max}}</span>
+                </div>
+
+                <!-- Armor -->
+                <div class="flex-group-left">
+                  <label for="gArmor">Armor:</label>
+                </div>
+                <div>
+                  <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.sanity.armor" placeholder="Armor" value="{{system.defences.sanity.armor}}" data-dtype="number">
+                </div>
+
+                <!-- Bonus -->
+                <div class="flex-group-left">
+                  <label for="gBonus">Bonus:</label>
+                </div>
+                <div>
+                  <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.sanity.bonus" placeholder="Bonus" value="{{system.defences.sanity.bonus}}" data-dtype="number">
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3>Movements</h3>
+              <div class="grid grid-2col">
+                <label>Land</label>
+                <input name="system.movements.lan.value" value="{{system.movements.lan.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
+                <label>Climb</label>
+                <input name="system.movements.cli.value" value="{{system.movements.cli.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
+                <label>Swim</label>
+                <input name="system.movements.swi.value" value="{{system.movements.swi.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
+                <label>Fly</label>
+                <input name="system.movements.fly.value" value="{{system.movements.fly.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
+                <label>Burrow</label>
+                <input name="system.movements.bur.value" value="{{system.movements.bur.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
+              </div>
+            </div>
           </section>
         </section>
     </div>

@@ -17,6 +17,18 @@
       "Ent": { "long": "Entropy", "abbr": "ent" },
       "Cre": { "long": "Creation", "abbr": "cre" }
     },
+    "Defences": {
+      "gua": { "long": "Guard", "abbr": "gua" },
+      "res": { "long": "Resiliance", "abbr": "res" },
+      "san": { "long": "Sanity", "abbr": "san" }
+    },
+    "Movements": {
+      "lan": { "long": "Land", "abbr": "lan" },
+      "cli": { "long": "Climb", "abbr": "cli" },
+      "swi": { "long": "Swim", "abbr": "swi" },
+      "fly": { "long": "Fly", "abbr": "fly" },
+      "bur": { "long": "Burrow", "abbr": "bur" }
+    },
     "SheetLabels": {
       "Actor": "TrueLegend Actor Sheet",
       "Item": "TrueLegend Item Sheet"
