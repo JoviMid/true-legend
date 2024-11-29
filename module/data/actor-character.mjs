@@ -78,6 +78,9 @@ export default class TrueLegendCharacter extends TrueLegendActorBase {
       this.movements['cli'].value = 5;
       this.movements['swi'].value = 5;
 
+      // Health
+      // Formula: 30 + ((Livello Pg) * (Tempra + Volontà + Presenza)/2)
+      this.health.max = 30 + (this.attributes.level.value * ((this.abilities["for"].value + this.abilities["wil"].value + this.abilities["pre"].value)/2))
 
       // Loop through ability scores, and add their modifiers to our sheet output.
       // Key = vig, agi, for, etc...
