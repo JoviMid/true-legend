@@ -27,7 +27,7 @@
   "version": "2.0.0",
   "compatibility": {
     "minimum": 11,
-    "verified": "11.315"
+    "verified": "12"
   },
   "esmodules": ["module/true-legend.mjs"],
   "styles": ["css/true-legend.css"],

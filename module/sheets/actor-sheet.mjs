@@ -236,7 +236,8 @@ export class TrueLegendActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
     let grade = (parseFloat(document.getElementById('attributeSelector1').value) || 0) + 
-                (parseFloat(document.getElementById('attributeSelector2').value) || 0);
+                (parseFloat(document.getElementById('attributeSelector2').value) || 0) +
+                (parseFloat(document.getElementById('bonus').value) || 0);
 
     let bonus = Math.ceil(grade / 2);
     let d12Dice = Math.floor(grade / 10);

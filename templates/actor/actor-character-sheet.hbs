@@ -61,7 +61,7 @@
                 <div>
                   <h3>Attributes points</h3>
                   <div class="ability flexrow flex-group-center square">
-                    <span class="ability-cost">{{numberFormat system.attributes.level.aPointsTot}} / {{numberFormat system.attributes.level.aPoints}}</span>
+                    <span class="ability-cost" style="font-size: 1.1rem">{{numberFormat system.attributes.level.aPointsTot}} / {{numberFormat system.attributes.level.aPoints}}</span>
                   </div>
                 </div>
 
@@ -69,12 +69,12 @@
                 {{#each (objectToArray system.abilities) as |ability index|}}
                   {{#if (div3 index)}}
                     <section id="category" style="margin-bottom: 10px;">
-                      <h3>{{names (div (index) 3)}}</h3>
+                      <h3 class="resource-label flexlarge align-left">{{names (div (index) 3)}}</h3>
                       {{logConsole ability}}
                   {{/if}}
                   
                   <div class="ability flexrow flex-group-center square">
-                    <label for="system.abilities.{{ability.[0]}}.value" class="resource-label flexlarge align-left">{{localize (lookup @root.config.abilities ability.[0])}}</label>
+                    <label for="system.abilities.{{ability.[0]}}.value" class="flexlarge align-left" style="font-size: 0.95rem">{{localize (lookup @root.config.abilities ability.[0])}}</label>
                     <input type="text" name="system.abilities.{{ability.[0]}}.value" value="{{ability.[1].value}}" data-dtype="Number"/>
                     <span class="ability-cost">{{numberFormat ability.[1].cost decimals=0}}</span>
                   </div>
@@ -91,23 +91,25 @@
           <section class="main grid-span-2">
             <div>
             {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-            {{> "systems/true-legend/templates/actor/parts/actor-features.hbs"}}
             </div>
             <div class="flex-group-center">
               <h2>Lancio dadi</h2>
-              <label>Attr</label>
-              <select id="attributeSelector1">
-                {{#each (objectToArray system.abilities) as |ability index|}}
-                  {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[1].value}}
-                {{/each}}
-              </select>
-              <span> + </span>
-              <label>Attr</label>
-              <select id="attributeSelector2">
-                {{#each (objectToArray system.abilities) as |ability index|}}
-                  {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[1].value}}
-                {{/each}}
-              </select>
+              <div class="grid grid-2col">
+                <label style="font-size: 1.1rem">Attribute</label>
+                <select id="attributeSelector1">
+                  {{#each (objectToArray system.abilities) as |ability index|}}
+                    {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[1].value}}
+                  {{/each}}
+                </select>
+                <label style="font-size: 1.1rem">Attribute</label>
+                <select id="attributeSelector2">
+                  {{#each (objectToArray system.abilities) as |ability index|}}
+                    {{createOption (localize (lookup @root.config.abilities ability.[0])) ability.[1].value}}
+                  {{/each}}
+                </select>
+                <label style="font-size: 1.1rem">Bonus</label>
+                <input id="bonus" type="text">
+              </div>
               <button type="button" id="rollDiceBtn" class="ability-mod rollable" data-roll="1d20+@abilities.{{ability.[1].value}}" data-label="{{ability.label}}">Lancia</button>
               </div>
             <div>
@@ -116,23 +118,23 @@
               <div class="category flex-group-left grid grid-2col">
                 <!-- Header Guard -->
                 <div class="flex-group-left">
-                  <h3 class="align-left">Guard</h3>
+                  <h3 class="resource-label flexlarge align-center">Guard</h3>
                 </div>
                 <div class="flex-group-right">
                   <span style="display: block; font-size: 1.5rem; font-weight: bold; text-align: center; color: #000; margin: 0 auto;">{{numberFormat system.defences.guard.max}}</span>
                 </div>
 
                 <!-- Armor -->
-                <div class="flex-group-left">
-                  <label for="gArmor">Armor:</label>
+                <div class="flex-group-center">
+                  <label style="font-size: 1.1rem">Armor</label>
                 </div>
                 <div>
                   <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.guard.armor" placeholder="Armor" value="{{system.defences.guard.armor}}" data-dtype="number">
                 </div>
 
                 <!-- Bonus -->
-                <div class="flex-group-left">
-                  <label for="gBonus">Bonus:</label>
+                <div class="flex-group-center">
+                  <label style="font-size: 1.1rem">Bonus</label>
                 </div>
                 <div>
                   <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.guard.bonus" placeholder="Bonus" value="{{system.defences.guard.bonus}}" data-dtype="number">
@@ -142,49 +144,49 @@
               <div class="category flex-group-left grid grid-2col">
                 <!-- Header Resilience -->
                 <div class="flex-group-left">
-                  <h3 class="align-left">Resilience</h3>
+                  <h3 class="resource-label flexlarge align-center">Resilience</h3>
                 </div>
                 <div class="flex-group-right">
                   <span style="display: block; font-size: 1.5rem; font-weight: bold; text-align: center; color: #000; margin: 0 auto;">{{numberFormat system.defences.resilience.max}}</span>
                 </div>
 
                 <!-- Armor -->
-                <div class="flex-group-left">
-                  <label for="rArmor">Armor:</label>
+                <div class="flex-group-center">
+                  <label style="font-size: 1.1rem">Armor</label>
                 </div>
                 <div>
                   <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.resilience.armor" placeholder="Armor" value="{{system.defences.resilience.armor}}" data-dtype="number">
                 </div>
 
                 <!-- Bonus -->
-                <div class="flex-group-left">
-                  <label for="rBonus">Bonus:</label>
+                <div class="flex-group-center">
+                  <label style="font-size: 1.1rem">Bonus</label>
                 </div>
                 <div>
                   <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.resilience.bonus" placeholder="Bonus" value="{{system.defences.resilience.bonus}}" data-dtype="number">
                 </div>
               </div>
-              <!-- Guard -->
+              <!-- Sanity -->
               <div class="category flex-group-left grid grid-2col">
                 <!-- Header Sanity -->
-                <div class="flex-group-left">
-                  <h3 class="align-left">Sanity</h3>
+                <div class="flex-group-center">
+                  <h3 class="resource-label flexlarge align-center">Sanity</h3>
                 </div>
                 <div class="flex-group-right">
                   <span style="display: block; font-size: 1.5rem; font-weight: bold; text-align: center; color: #000; margin: 0 auto;">{{numberFormat system.defences.sanity.max}}</span>
                 </div>
 
                 <!-- Armor -->
-                <div class="flex-group-left">
-                  <label for="gArmor">Armor:</label>
+                <div class="flex-group-center">
+                  <label style="font-size: 1.1rem">Armor</label>
                 </div>
                 <div>
                   <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.sanity.armor" placeholder="Armor" value="{{system.defences.sanity.armor}}" data-dtype="number">
                 </div>
 
                 <!-- Bonus -->
-                <div class="flex-group-left">
-                  <label for="gBonus">Bonus:</label>
+                <div class="flex-group-center">
+                  <label style="font-size: 1.1rem">Bonus</label>
                 </div>
                 <div>
                   <input style="font-size: 1.1rem; text-align: center" type="text" name="system.defences.sanity.bonus" placeholder="Bonus" value="{{system.defences.sanity.bonus}}" data-dtype="number">
@@ -194,15 +196,15 @@
             <div>
               <h3>Movements</h3>
               <div class="grid grid-2col">
-                <label>Land</label>
+                <label class="flex-group-center" style="font-size: 1.1rem">Land</label>
                 <input name="system.movements.lan.value" value="{{system.movements.lan.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
-                <label>Climb</label>
+                <label class="flex-group-center" style="font-size: 1.1rem">Climb</label>
                 <input name="system.movements.cli.value" value="{{system.movements.cli.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
-                <label>Swim</label>
+                <label class="flex-group-center" style="font-size: 1.1rem">Swim</label>
                 <input name="system.movements.swi.value" value="{{system.movements.swi.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
-                <label>Fly</label>
+                <label class="flex-group-center" style="font-size: 1.1rem">Fly</label>
                 <input name="system.movements.fly.value" value="{{system.movements.fly.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
-                <label>Burrow</label>
+                <label class="flex-group-center" style="font-size: 1.1rem">Burrow</label>
                 <input name="system.movements.bur.value" value="{{system.movements.bur.value}}" style="font-size: 1.1rem; text-align: center" type="text" data-dtype="Number">
               </div>
             </div>
